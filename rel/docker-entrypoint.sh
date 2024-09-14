@@ -5,9 +5,7 @@ if [ "$1" = 'run' ]; then
       exec /app/bin/plausible start
 
 elif [ "$1" = 'db' ]; then
-      sleep 100
-      exec /app/createdb.sh
-      exec /app/migrate .sh
+      exec /app/"$2".sh
  else
       exec "$@"
 

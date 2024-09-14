@@ -79,3 +79,7 @@ plausible-report.xml
 # Docker volumes
 .clickhouse_db_vol*
 plausible_db*
+
+# Dockerfile
+Dockerfile
+/rel/tiny.sh

@@ -71,10 +71,12 @@ RUN apk add --no-cache openssl ncurses libstdc++ libgcc ca-certificates \
 
 COPY --from=buildcontainer --chmod=a+rX /app/_build/${MIX_ENV}/rel/plausible /app
 COPY --chmod=755 ./rel/docker-entrypoint.sh /entrypoint.sh
+COPY --chmod=755 ./rel/tiny.sh /tiny.sh
 
 # we need to allow "others" access to app folder, because
 # docker container can be started with arbitrary uid
 RUN mkdir -p /var/lib/plausible && chmod ugo+rw -R /var/lib/plausible
+
 
 USER 999
 WORKDIR /app
